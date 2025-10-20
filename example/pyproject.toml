@@ -1,0 +1,32 @@
+[project]
+name = "py-conan-add"
+requires-python = ">=3.8"
+dynamic = ["version", "description"]
+
+[project.optional-dependencies]
+test = ["pytest>=7.2.0,<9"]
+
+[project.scripts]
+add = "py_conan_add.add:main"
+
+[build-system]
+requires = [ "py-build-cmake~=0.6.0a2", "conan~=2.21.0", "cmake~=4.1"]
+build-backend = "py_build_cmake.build"
+
+[tool.py-build-cmake.module]
+name = "py_conan_add" # Import name
+directory = "src"
+
+[tool.py-build-cmake.sdist]
+include = ["conanfile.py", "CMakeLists.txt", "src"]
+
+[tool.py-build-cmake.conan.cmake]
+minimum_version = "4.1"
+build_type = "Release"
+install_components = ["python_modules"]
+find_python3_build_artifacts_prefix = "_HOST"
+
+[tool.py-build-cmake.linux.conan.cmake]
+generator = "Ninja Multi-Config"
+[tool.py-build-cmake.mac.conan.cmake]
+generator = "Ninja Multi-Config"
