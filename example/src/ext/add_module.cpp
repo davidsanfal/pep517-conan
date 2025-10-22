@@ -5,19 +5,7 @@
 
 #include <cstdint>
 #include <pybind11/pybind11.h>
-
-#include <cstdlib>
-#include <iostream>
-#include <iterator>
-#include <string>
-#include <vector>
-#include <limits>
-
-
-#include <fmt/format.h>
 #include <fmt/printf.h>
-#include <fmt/ostream.h>
-#include <fmt/color.h>
 
 using namespace pybind11::literals;
 

@@ -20,6 +20,9 @@ directory = "src"
 [tool.py-build-cmake.sdist]
 include = ["conanfile.py", "CMakeLists.txt", "src"]
 
+[tool.py-build-cmake.conan]
+args = ["--build=missing", "-o fmt/*:shared=True", "-o fmt/*:header_only=False"]
+
 [tool.py-build-cmake.conan.cmake]
 minimum_version = "4.1"
 build_type = "Release"
