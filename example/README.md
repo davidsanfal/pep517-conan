@@ -1,20 +1,10 @@
 **Linux/macOS**
 ```sh
-python3 -m pip install -U pip conan build
+python3 -m pip install -U pip conan build delocate
 conan profile detect
 python3 -m build -w
-python3 -m pip install -v .
-python3 -m pip install -v .[test]
+export DYLD_LIBRARY_PATH=$PWD/.py-build-cmake_cache
+python3 delocate-wheel dest/<wheel-name>
+python3 -m pip install dist/<wheel-name>
 python3 -m pytest
-```
-
-**Windows**
-```sh
-py -3 -m pip install -U pip conan build pytest
-conan profile detect
-conan install . --build=missing
-py -3 -m build -w
-py -3 -m pip install -v .
-py -3 -m  install -v .[test]
-py -3 -m pytest
 ```
