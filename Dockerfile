@@ -11,11 +11,11 @@ RUN apt update \
         python3.12-dev \
     && rm -rf /var/lib/apt/lists/*
 
-ADD example /example
-WORKDIR /example
+RUN git clone https://github.com/davidsanfal/pep517-conan
+WORKDIR /pep517-conan/example
 RUN python3 -m venv venv
-RUN venv/bin/pip install build conan
-RUN venv/bin/conan profile detect
+RUN ls -lisa
+RUN venv/bin/pip install build conan pytest
 RUN venv/bin/python -m build -w
-RUN venv/bin/pip install -v .[test]
+RUN venv/bin/pip install dist/py_conan_add-0.6.0a2.dev0-cp312-cp312-linux_x86_64.whl
 RUN venv/bin/pytest
