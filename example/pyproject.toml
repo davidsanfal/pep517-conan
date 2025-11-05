@@ -24,7 +24,7 @@ directory = "src"
 include = ["conanfile.py", "CMakeLists.txt", "src"]
 
 [tool.py-build-cmake.conan]
-args = ["--build=missing"]
+args = ["--build=missing", "-o fmt/*:shared=True", "-o fmt/*:header_only=False"]
 
 [tool.py-build-cmake.conan.cmake]
 minimum_version = "4.1"
