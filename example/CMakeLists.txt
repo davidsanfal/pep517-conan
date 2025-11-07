@@ -30,9 +30,13 @@ target_compile_definitions(_add_module PRIVATE
     VERSION_INFO="${PY_FULL_VERSION}"
 )
 
-# Add the fmt library after pybind11_add_module
+# Add other libraries after pybind11_add_module
 find_package(fmt REQUIRED)
+find_package(Intl REQUIRED)
+find_package(ZLIB REQUIRED)
 target_link_libraries(_add_module PRIVATE fmt::fmt)
+target_link_libraries(_add_module PRIVATE Intl::Intl)
+target_link_libraries(_add_module PRIVATE ZLIB::ZLIB)
 
 # Hide all symbols by default (including external libraries on Linux)
 set_target_properties(_add_module PROPERTIES
