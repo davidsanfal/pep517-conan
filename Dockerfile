@@ -19,5 +19,5 @@ RUN python3 -m venv venv
 RUN ls -lisa
 RUN venv/bin/pip install build conan pytest
 RUN venv/bin/python -m build -w
-# RUN venv/bin/pip install dist/py_conan_add-0.6.0a2.dev0-cp312-cp312-linux_x86_64.whl
-# RUN venv/bin/pytest
+RUN venv/bin/pip install dist/py_conan_add-0.6.0a2.dev0-cp312-cp312-linux_x86_64.whl
+RUN export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.conan2/ld_library_path && venv/bin/pytest
