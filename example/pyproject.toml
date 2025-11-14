@@ -38,5 +38,5 @@ generator = "Ninja Multi-Config"
 [tool.py-build-cmake.mac.conan.cmake]
 generator = "Ninja Multi-Config"
 
-[tool.py-build-cmake.mac.hooks.wheel]
-postbuild = ["./conan_delocate.py"]
+# [tool.py-build-cmake.mac.hooks.wheel]
+# postbuild = ["./conan_delocate.py"]
