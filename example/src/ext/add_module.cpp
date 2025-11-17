@@ -6,17 +6,17 @@
 #include <cstdint>
 #include <pybind11/pybind11.h>
 #include <fmt/printf.h>
-// #include <zlib.h>
-// #include <libintl.h>
+#include <zlib.h>
+#include <libintl.h>
 
 using namespace pybind11::literals;
 
 
 int32_t add(int32_t a, int32_t b) {
     const std::string thing("World");
-    // gettext("Hello, world!");
+    gettext("Hello, world!");
     fmt::print("PRINT: Hello {}!\n", thing);
-    // fmt::print("ZLIB VERSION: {}!\n", zlibVersion());
+    fmt::print("ZLIB VERSION: {}!\n", zlibVersion());
     return a + b;
 }
 
