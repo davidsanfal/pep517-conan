@@ -26,13 +26,14 @@ directory = "src"
 include = ["CMakeLists.txt", "src"]
 
 [tool.py-build-cmake.conan]
-args = ["--build=missing", "-o *:shared=True", "-o *:header_only=False"]
+args = ["--build=missing", "-o *:header_only=False"]
 requirements = [
     "pybind11/3.0.1",
     "fmt/12.0.0",
     "zlib/1.3.1",
     "libgettext/0.22",
 ]
+shared = true
 
 [tool.py-build-cmake.conan.cmake]
 minimum_version = "4.1"
