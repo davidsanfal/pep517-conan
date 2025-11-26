@@ -10,7 +10,7 @@ apt install patchelf build-essential
 
 **Linux/macOS**
 ```sh
-pip install -U pip build pytest
+pip install -U pip build pytest cmake ninja
 git clone https://github.com/davidsanfal/py-build-cmake.git --branch conan-shared
 cd py-build-cmake
 python -m build .
