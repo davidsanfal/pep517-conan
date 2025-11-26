@@ -11,7 +11,7 @@ add = "py_conan_add.add:main"
 
 [build-system]
 requires = [
-    "git+https://github.com/davidsanfal/py-build-cmake.git@conan-hooks",
+    "py-build-cmake==0.6.0a3.dev0",
     "conan~=2.21.0",
     "cmake~=4.1",
     "delocate==0.13.0",
