@@ -14,8 +14,8 @@ pip install -U pip build pytest cmake ninja
 git clone https://github.com/davidsanfal/py-build-cmake.git --branch conan-shared
 cd py-build-cmake
 python -m build .
-export PIP_FIND_LINKS=$PWD/dist:$PIP_FIND_LINKS
-pip install y-build-cmake==0.6.0a3.dev0
+export PIP_FIND_LINKS=<path-to>/py-build-cmake/dist
+pip install py-build-cmake[conan]==0.6.0a3.dev0
 
 cd ..
 git clone https://github.com/davidsanfal/pep517-conan.git
